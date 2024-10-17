@@ -1,13 +1,13 @@
 ---
 title: Three.js Potenciando la Web con Gráficos 3D y Efectos Visuales Avanzados
 published: 2024-10-17
-description: Descubre cómo en ElSaltoWeb utilizamos Three.js para crear efectos visuales como humo y fuego en gráficos 3D interactivos.
+description: Utilizo Three.js para crear efectos visuales como humo y fuego en gráficos 3D interactivos.
 tags: [Desarrollo Web, Three.js, Gráficos 3D, Efectos Visuales, Diseño Web]
 category: Desarrollo Web
 draft: false
 ---
 
-En **ElSaltoWeb**, nos esforzamos por ofrecer soluciones web innovadoras, y una de las herramientas más potentes que empleamos es **Three.js**. Esta biblioteca de JavaScript nos permite crear gráficos en 3D directamente en el navegador, añadiendo una capa de inmersión y dinamismo a las aplicaciones web que desarrollamos.
+Esta biblioteca de JavaScript nos permite crear gráficos en 3D directamente en el navegador, añadiendo una capa de inmersión y dinamismo a las aplicaciones web que desarrollamos.
 
 ### ¿Qué es Three.js?
 

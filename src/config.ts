@@ -54,22 +54,22 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
   avatar: 'assets/images/andres.png',  // Ruta relativa para tu avatar
   name: 'Andrés Tobío',
-  bio: 'Desarrollador web apasionado y padre siempre ocupado, especializado en soluciones modernas y optimizadas.',
+  bio: 'Web developer and bussy father, especializado en soluciones modernas y optimizadas.',
   links: [
     {
-      name: 'Twitter',
-      icon: 'fa6-brands:twitter',
-      url: 'https://twitter.com/andrestobio',  // Actualiza con tu perfil real
+      name: 'Linkedin',
+      icon: 'fa6-brands:linkedin',
+      url: 'https://www.linkedin.com/in/andr%C3%A9s-tob%C3%ADo-037b33241/',  // Actualiza con tu perfil real
     },
     {
-      name: 'Steam',
-      icon: 'fa6-brands:steam',
-      url: 'https://store.steampowered.com',  // O tu perfil personalizado de Steam
+      name: 'Instagram',
+      icon: 'fa6-brands:instagram',
+      url: 'https://www.instagram.com/elsaltoweb/',  // O tu perfil personalizado de Steam
     },
     {
       name: 'GitHub',
       icon: 'fa6-brands:github',
-      url: 'https://github.com/saicaca/fuwari',  // Repositorio principal
+      url: 'https://github.com/AndrewUru',  // Repositorio principal
     },
   ],
   location: 'Valencia, España',  // Añadido para personalizar más el perfil
