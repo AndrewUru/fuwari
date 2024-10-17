@@ -1,166 +1,266 @@
 ---
-title: Markdown Example
-published: 2023-10-01
-description: A simple example of a Markdown blog post.
-tags: [Markdown, Blogging, Demo]
-category: Examples
+title: Three.js Potenciando la Web con Gráficos 3D y Efectos Visuales Avanzados
+published: 2024-10-17
+description: Descubre cómo en ElSaltoWeb utilizamos Three.js para crear efectos visuales como humo y fuego en gráficos 3D interactivos.
+tags: [Desarrollo Web, Three.js, Gráficos 3D, Efectos Visuales, Diseño Web]
+category: Desarrollo Web
 draft: false
 ---
 
-# An h1 header
+En **ElSaltoWeb**, nos esforzamos por ofrecer soluciones web innovadoras, y una de las herramientas más potentes que empleamos es **Three.js**. Esta biblioteca de JavaScript nos permite crear gráficos en 3D directamente en el navegador, añadiendo una capa de inmersión y dinamismo a las aplicaciones web que desarrollamos.
 
-Paragraphs are separated by a blank line.
+### ¿Qué es Three.js?
 
-2nd paragraph. _Italic_, **bold**, and `monospace`. Itemized lists
-look like:
+**Three.js** es una biblioteca que simplifica el uso de **WebGL**, permitiendo a los desarrolladores crear gráficos tridimensionales de manera sencilla. Con **Three.js**, se pueden crear escenas 3D, modelos, luces y cámaras, todo dentro de un navegador. Es ideal para crear experiencias interactivas como simulaciones, videojuegos y visualizaciones de datos, pero también para efectos visuales avanzados como humo, fuego y agua.
 
-- this one
-- that one
-- the other one
+### Ejemplo: Efecto de Humo con Three.js
 
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
+A continuación, te mostramos un ejemplo de un efecto visual de **humo** utilizando Three.js. Este efecto puede integrarse fácilmente en un sitio web para añadir realismo o un toque visual único:
 
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
+<div id="threejs-container" style="width: 100%; height: 400px;"></div>
 
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
+<script>
+ (function () {
+  'use strict';
+  // 'To actually be able to display anything with Three.js, we need three things:
+  // A scene, a camera, and a renderer so we can render the scene with the camera.'
+  // - https://threejs.org/docs/#Manual/Introduction/Creating_a_scene
 
-## An h2 header
+  var scene, camera, renderer;
 
-Here's a numbered list:
+  // I guess we need this stuff too
+  var container,HEIGHT,
+  WIDTH,fieldOfView,aspectRatio,
+  nearPlane,farPlane,stats,
+  geometry,particleCount,
+  i,h,color,size,
+  materials = [],
+  mouseX = 0,
+  mouseY = 0,
+  windowHalfX,windowHalfY,cameraZ,
+  fogHex,fogDensity,parameters = {},
+  parameterCount,particles;
 
-1. first item
-2. second item
-3. third item
+  init();
+  animate();
 
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
+  function init() {
 
-    # Let me re-iterate ...
-    for i in 1 .. 10 { do-something(i) }
+    HEIGHT = window.innerHeight;
+    WIDTH = window.innerWidth;
+    windowHalfX = WIDTH / 2;
+    windowHalfY = HEIGHT / 2;
 
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
+    fieldOfView = 75;
+    aspectRatio = WIDTH / HEIGHT;
+    nearPlane = 1;
+    farPlane = 3000;
 
-```
-define foobar() {
-    print "Welcome to flavor country!";
-}
-```
+    var GUI = dat.gui.GUI;
 
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
+    /* 	fieldOfView — Camera frustum vertical field of view.
+    aspectRatio — Camera frustum aspect ratio.
+    nearPlane — Camera frustum near plane.
+    farPlane — Camera frustum far plane.
+    - https://threejs.org/docs/#Reference/Cameras/PerspectiveCamera
+    In geometry, a frustum (plural: frusta or frustums)
+    is the portion of a solid (normally a cone or pyramid)
+    that lies between two parallel planes cutting it. - wikipedia.		*/
 
-```python
-import time
-# Quick, count to ten!
-for i in range(10):
-    # (but not *too* quick)
-    time.sleep(0.5)
-    print i
-```
 
-### An h3 header
 
-Now a nested list:
+    cameraZ = farPlane / 3; /*	So, 1000? Yes! move on!	*/
+    fogHex = 0x000000; /* As black as your heart.	*/
+    fogDensity = 0.0007; /* So not terribly dense?	*/
 
-1. First, get these ingredients:
+    camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
+    camera.position.z = cameraZ;
 
-    - carrots
-    - celery
-    - lentils
+    scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(fogHex, fogDensity);
 
-2. Boil some water.
+    container = document.createElement('div');
+    document.body.appendChild(container);
+    document.body.style.margin = 0;
+    document.body.style.overflow = 'hidden';
 
-3. Dump everything in the pot and follow
-    this algorithm:
+    geometry = new THREE.Geometry(); /*	NO ONE SAID ANYTHING ABOUT MATH! UGH!	*/
 
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
+    particleCount = 60000; /* Leagues under the sea */
 
-    Do not bump wooden spoon or it will fall.
+    /*	Hope you took your motion sickness pills;
+    We're about to get loopy.	*/
 
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
+    for (i = 0; i < particleCount; i++) {
 
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
+      var vertex = new THREE.Vector3();
+      vertex.x = Math.random() * 2000 - 1000;
+      vertex.y = Math.random() * 2000 - 1000;
+      vertex.z = Math.random() * 2000 - 1000;
 
-[^1]: Footnote text goes here.
+      geometry.vertices.push(vertex);
+    }
 
-Tables can look like this:
+    /*	We can't stop here, this is bat country!	*/
 
-size material color
+    parameters = [
+    [
+    [1, 1, 0.5], 5],
+
+    [
+    [0.95, 1, 0.5], 4],
+
+    [
+    [0.90, 1, 0.5], 3],
+
+    [
+    [0.85, 1, 0.5], 2],
+
+    [
+    [0.80, 1, 0.5], 1]];
+
+
+    parameterCount = parameters.length;
+
+    /*	I told you to take those motion sickness pills.
+    Clean that vommit up, we're going again!	*/
+
+    for (i = 0; i < parameterCount; i++) {
+
+      color = parameters[i][0];
+      size = parameters[i][1];
+
+      materials[i] = new THREE.PointCloudMaterial({
+        size: size });
+
+
+      particles = new THREE.PointCloud(geometry, materials[i]);
+
+      particles.rotation.x = Math.random() * 6;
+      particles.rotation.y = Math.random() * 6;
+      particles.rotation.z = Math.random() * 6;
+
+      scene.add(particles);
+    }
+
+    /*	If my calculations are correct, when this baby hits 88 miles per hour...
+    you're gonna see some serious shit.	*/
+
+    renderer = new THREE.WebGLRenderer(); /*	Rendererererers particles.	*/
+    renderer.setPixelRatio(window.devicePixelRatio); /*	Probably 1; unless you're fancy.	*/
+    renderer.setSize(WIDTH, HEIGHT); /*	Full screen baby Wooooo!	*/
+
+    container.appendChild(renderer.domElement); /* Let's add all this crazy junk to the page.	*/
+
+    /*	I don't know about you, but I like to know how bad my
+    code is wrecking the performance of a user's machine.
+    Let's see some damn stats!	*/
+
+    stats = new Stats();
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.top = '0px';
+    stats.domElement.style.right = '0px';
+    container.appendChild(stats.domElement);
+
+    /* Event Listeners */
+
+    window.addEventListener('resize', onWindowResize, false);
+    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener('touchstart', onDocumentTouchStart, false);
+    document.addEventListener('touchmove', onDocumentTouchMove, false);
+
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    render();
+    stats.update();
+  }
+
+  function render() {
+    var time = Date.now() * 0.00005;
+
+    camera.position.x += (mouseX - camera.position.x) * 0.05;
+    camera.position.y += (-mouseY - camera.position.y) * 0.05;
+
+    camera.lookAt(scene.position);
+
+    for (i = 0; i < scene.children.length; i++) {
+
+      var object = scene.children[i];
+
+      if (object instanceof THREE.PointCloud) {
+
+        object.rotation.y = time * (i < 4 ? i + 1 : -(i + 1));
+      }
+    }
+
+    for (i = 0; i < materials.length; i++) {
+
+      color = parameters[i][0];
+
+      h = 360 * (color[0] + time) % 360 / 360;
+      materials[i].color.setHSL(h, color[1], color[2]);
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  function onDocumentMouseMove(e) {
+    mouseX = e.clientX - windowHalfX;
+    mouseY = e.clientY - windowHalfY;
+  }
+
+  /*	Mobile users?  I got your back homey	*/
+
+  function onDocumentTouchStart(e) {
+
+    if (e.touches.length === 1) {
+
+      e.preventDefault();
+      mouseX = e.touches[0].pageX - windowHalfX;
+      mouseY = e.touches[0].pageY - windowHalfY;
+    }
+  }
+
+  function onDocumentTouchMove(e) {
+
+    if (e.touches.length === 1) {
+
+      e.preventDefault();
+      mouseX = e.touches[0].pageX - windowHalfX;
+      mouseY = e.touches[0].pageY - windowHalfY;
+    }
+  }
+
+  function onWindowResize() {
+
+    windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+})();
+</script>
+
+### ¿Por qué utilizamos Three.js en ElSaltoWeb?
+
+Los gráficos tridimensionales permiten crear experiencias inmersivas y únicas que elevan la calidad visual de un sitio web. Con Three.js, podemos integrar efectos como **humo**, **fuego**, o incluso **agua en movimiento** de una manera que sería imposible utilizando solo HTML y CSS. Estos efectos mejoran la interacción y hacen que la experiencia de usuario sea más memorable.
+
+### Casos de Uso de Three.js en ElSaltoWeb
+
+Algunos de los casos en los que aplicamos Three.js incluyen:
+
+- **Simulaciones realistas:** Perfecto para mostrar productos en 3D o crear experiencias interactivas, como configuradores de productos.
+- **Efectos visuales personalizados:** Como el ejemplo anterior de humo, pero también fuego, explosiones o partículas.
+- **Visualizaciones de datos:** Para convertir datos complejos en gráficas visuales y dinámicas que facilitan su comprensión.
+
+### ¿Cómo puedes beneficiarte de Three.js?
+
+Si tu proyecto necesita elementos visuales impactantes, **Three.js** es una opción ideal. En **ElSaltoWeb**, podemos implementar cualquier tipo de efecto visual que necesites, desde elementos interactivos sencillos hasta complejas visualizaciones tridimensionales.
 
 ---
 
-9 leather brown
-10 hemp canvas natural
-11 glass transparent
-
-Table: Shoes, their sizes, and what they're made of
-
-(The above is the caption for the table.) Pandoc also supports
-multi-line tables:
-
----
-
-keyword text
-
----
-
-red Sunsets, apples, and
-other red or reddish
-things.
-
-green Leaves, grass, frogs
-and other things it's
-not easy being.
-
----
-
-A horizontal rule follows.
-
----
-
-Here's a definition list:
-
-apples
-: Good for making applesauce.
-oranges
-: Citrus!
-tomatoes
-: There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line between each
-term/definition pair to spread things out more.)
-
-Here's a "line block":
-
-| Line one
-| Line too
-| Line tree
-
-and images can be specified like so:
-
-[//]: # (![example image]&#40;./demo-banner.png "An exemplary image"&#41;)
-
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
-
-$$I = \int \rho R^{2} dV$$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
+Para más información sobre cómo podemos integrar **Three.js** y crear experiencias tridimensionales para tu web, visita [www.elsaltoweb.es](http://www.elsaltoweb.es) o contáctanos directamente.

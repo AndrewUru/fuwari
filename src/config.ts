@@ -7,29 +7,34 @@ import type {
 import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
-  title: 'Fuwari',
-  subtitle: 'Demo Site',
-  lang: 'en',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
+  title: 'ElSaltoWeb.es',
+  subtitle: 'Diseño y desarrollo web',
+  lang: 'es',  // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
   themeColor: {
-    hue: 250,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-    fixed: false,     // Hide the theme color picker for visitors
+    hue: 250,  // Ejemplo: cian, entre 0 a 360 (personaliza según colores)
+    fixed: false,  // El visitante no podrá cambiar el color del tema
   },
   banner: {
-    enable: false,
-    src: 'assets/images/demo-banner.png',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-    position: 'center',      // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+    enable: true,
+    src: 'assets/images/grafiti.jpeg',  // Asegúrate de tener la imagen correctamente en /src o /public
+    position: 'center',  // Posiciona la imagen en el centro
     credit: {
-      enable: false,         // Display the credit text of the banner image
-      text: '',              // Credit text to be displayed
-      url: ''                // (Optional) URL link to the original artwork or artist's page
+      enable: true,  // Activamos los créditos por si es necesario
+      text: 'Fotografía por Nombre del Fotógrafo',  // Texto del crédito (opcional)
+      url: 'https://ejemplo.com/fotografo',  // URL hacia el creador de la imagen
     }
   },
-  favicon: [    // Leave this array empty to use the default favicon
-    // {
-    //   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-    //   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-    //   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-    // }
+  favicon: [
+    {
+      src: '/favicon/icon.png',  // Ruta de tu favicon
+      theme: 'light',  // Favicon para modo claro
+      sizes: '32x32',  // Tamaño estándar del favicon
+    },
+    {
+      src: '/favicon/icon-dark.png',  // Favicon alternativo para modo oscuro
+      theme: 'dark',
+      sizes: '32x32',
+    },
   ]
 }
 
@@ -40,39 +45,39 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.About,
     {
       name: 'GitHub',
-      url: 'https://github.com/saicaca/fuwari',     // Internal links should not include the base path, as it is automatically added
-      external: true,                               // Show an external link icon and will open in a new tab
+      url: 'https://github.com/saicaca/fuwari',  // Asegúrate de revisar la URL del proyecto
+      external: true,  // Abre en una nueva pestaña
     },
   ],
 }
 
 export const profileConfig: ProfileConfig = {
-  avatar: 'assets/images/demo-avatar.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-  name: 'Lorem Ipsum',
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  avatar: 'assets/images/andres.png',  // Ruta relativa para tu avatar
+  name: 'Andrés Tobío',
+  bio: 'Desarrollador web apasionado y padre siempre ocupado, especializado en soluciones modernas y optimizadas.',
   links: [
     {
       name: 'Twitter',
-      icon: 'fa6-brands:twitter',       // Visit https://icones.js.org/ for icon codes
-                                        // You will need to install the corresponding icon set if it's not already included
-                                        // `pnpm add @iconify-json/<icon-set-name>`
-      url: 'https://twitter.com',
+      icon: 'fa6-brands:twitter',
+      url: 'https://twitter.com/andrestobio',  // Actualiza con tu perfil real
     },
     {
       name: 'Steam',
       icon: 'fa6-brands:steam',
-      url: 'https://store.steampowered.com',
+      url: 'https://store.steampowered.com',  // O tu perfil personalizado de Steam
     },
     {
       name: 'GitHub',
       icon: 'fa6-brands:github',
-      url: 'https://github.com/saicaca/fuwari',
+      url: 'https://github.com/saicaca/fuwari',  // Repositorio principal
     },
   ],
+  location: 'Valencia, España',  // Añadido para personalizar más el perfil
 }
 
 export const licenseConfig: LicenseConfig = {
   enable: true,
-  name: 'CC BY-NC-SA 4.0',
+  name: 'CC BY-NC-SA 4.0',  // Licencia por defecto: Atribución, no comercial, compartir igual
   url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+  description: 'Contenido licenciado bajo Creative Commons, no comercial, compartición con atribución.',  // Resumen de la licencia
 }
