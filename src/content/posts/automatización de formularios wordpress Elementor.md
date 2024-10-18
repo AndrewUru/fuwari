@@ -2,6 +2,7 @@
 title: Crear una autorespuesta con PDF o Imagen personalizado en Elementor Pro
 description: Aprende a configurar una autorespuesta con archivos adjuntos personalizados en Elementor Pro.
 published: 2024-03-12
+image: 'https://elsaltoweb.es/wp-content/uploads/2024/10/Elementor.webp' # Reemplaza esta URL por la imagen correcta
 tags: [WordPress, Elementor, Formulario, Autorespuesta, Desarrollo Web]
 category: Desarrollo Web
 lang: es

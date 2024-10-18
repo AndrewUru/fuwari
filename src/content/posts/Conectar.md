@@ -1,15 +1,17 @@
 ---
-title: Conectar a WordPress por SSH Guía Técnica Completa
+title: Conectar a WordPress por SSH guía técnica completa.
 published: 2024-10-17
 description: Aprende a conectar de manera segura a tu instalación de WordPress por SSH usando Visual Studio Code para realizar tareas avanzadas de administración.
-image: 'https://elsaltoweb.es/wp-content/uploads/2024/10/captura-vs-code.jpg' # Reemplaza esta URL por la imagen correcta
+image: 'https://elsaltoweb.es/wp-content/uploads/2024/10/conexion-ssh-scaled.webp' # Reemplaza esta URL por la imagen correcta
 tags: [WordPress, SSH, Seguridad, Desarrollo Web, Hosting, Visual Studio Code]
 category: Desarrollo Web
 draft: false 
 lang: es
 ---
 
-Conectar tu instalación de **WordPress por SSH** te permite realizar tareas de administración avanzadas de manera más eficiente y segura. SSH (Secure Shell) es un protocolo que permite a los usuarios acceder a servidores de forma remota usando una línea de comandos encriptada. En este post, te mostraremos cómo establecer una conexión SSH a tu servidor utilizando la terminal y también cómo integrar Visual Studio Code (VS Code) para facilitar la administración de archivos de WordPress.
+Conectar tu instalación de **WordPress por SSH** te permite realizar tareas de administración avanzadas de manera más eficiente y segura. 
+SSH (Secure Shell) es un protocolo que permite a los usuarios acceder a servidores de forma remota usando una línea de comandos encriptada. 
+En este post, te muestro cómo establecer una conexión SSH a tu servidor utilizando la terminal y también cómo integrar Visual Studio Code (VS Code) para facilitar la administración de archivos de WordPress.
 
 ## ¿Por qué conectar a WordPress por SSH?
 
@@ -54,6 +56,7 @@ Sigue estos pasos para establecer una conexión SSH y comenzar a trabajar con tu
 
 ### 2. Conectar usando Visual Studio Code
 
+![Conectar a WordPress por SSH](https://elsaltoweb.es/wp-content/uploads/2024/10/captura-vs-code.jpg) <!-- Reemplaza la imagen por una real -->
 Visual Studio Code es una herramienta muy poderosa que permite conectarse a servidores remotos a través de SSH para gestionar y editar archivos de manera más cómoda.
 
 1. **Instalar la extensión Remote - SSH**:
@@ -87,8 +90,8 @@ Visual Studio Code es una herramienta muy poderosa que permite conectarse a serv
 
 ## Conclusión
 
-Conectar a WordPress por SSH te proporciona un acceso seguro y directo para administrar tu sitio web, lo que te permite tener un mayor control sobre tus archivos y configuraciones. Utilizar **Visual Studio Code** no solo hace que la experiencia sea más intuitiva, sino que también mejora la eficiencia en el flujo de trabajo al permitirte editar directamente en el servidor. 
+Conectar a WordPress por SSH te proporciona un acceso seguro y directo para administrar tu sitio web, lo que te permite tener un mayor control sobre tus archivos y configuraciones. 
+Utilizar **Visual Studio Code** no solo hace que la experiencia sea más intuitiva, sino que también mejora la eficiencia en el flujo de trabajo al permitirte editar directamente en el servidor. 
 
 Configurar estas herramientas correctamente puede ahorrarte mucho tiempo y dolores de cabeza, especialmente cuando se trata de realizar cambios críticos o solucionar problemas.
 
-![Conectar a WordPress por SSH](https://elsaltoweb.es/wp-content/uploads/2024/03/Default_a_fotorrealistic_wordpress_central_offices_0.png) <!-- Reemplaza la imagen por una real -->
