@@ -1,5 +1,5 @@
 ---
-title: Crear una Autorespuesta con PDF o Imagen Personalizado en Elementor Pro
+title: Crear una autorespuesta con PDF o Imagen personalizado en Elementor Pro
 description: Aprende a configurar una autorespuesta con archivos adjuntos personalizados en Elementor Pro.
 published: 2024-03-12
 tags: [WordPress, Elementor, Formulario, Autorespuesta, Desarrollo Web]
@@ -8,7 +8,7 @@ lang: es
 draft: false
 ---
 
-En este artículo, vamos a solucionar un caso común cuando se trabaja con **Elementor Pro** y **formularios**: cómo enviar un correo de **autorespuesta** con un PDF o imagen personalizado que incluya el nombre del usuario que ingresó en el formulario.
+Con **Elementor Pro** y **formularios**: cómo enviar un correo de **autorespuesta** con un PDF o imagen personalizado que incluya el nombre del usuario que ingresó en el formulario.
 
 Elementor Pro permite crear formularios avanzados, pero para personalizar más allá de las opciones por defecto, necesitaremos usar algo de PHP y personalizar los hooks.
 
