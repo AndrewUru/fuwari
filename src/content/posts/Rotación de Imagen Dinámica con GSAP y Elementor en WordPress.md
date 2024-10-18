@@ -2,7 +2,7 @@
 title: Rotación Continua de Imagen con CSS en Elementor en WordPress
 published: 2024-10-18
 description: "Demostración en vivo de cómo crear una animación de rotación continua de una imagen con CSS en WordPress usando Elementor."
-image: /images/css-image-rotation.jpg
+image: https://elsaltoweb.es/wp-content/uploads/2024/04/Elementor.jpg
 tags: ["WordPress", "CSS", "Elementor", "Animación"]
 category: "WordPress"
 draft: false
