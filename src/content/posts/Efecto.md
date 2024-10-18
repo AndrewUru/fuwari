@@ -11,6 +11,7 @@ En **ElSaltoWeb**, además de utilizar tecnologías como **Three.js** para gráf
 
 ### Ejemplo: Efecto de Partículas en WebGL
 
+
 A continuación, te mostramos un ejemplo de cómo crear un sencillo sistema de partículas utilizando **WebGL**. Las partículas se mueven de forma aleatoria para simular un flujo dinámico.
 
 <div id="webgl-container"></div>
