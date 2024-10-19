@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
     position: 'center',  // Posiciona la imagen en el centro
     credit: {
       enable: true,  // Activamos los créditos por si es necesario
-      text: 'Fotografía por Nombre del Fotógrafo',  // Texto del crédito (opcional)
+      text: 'Studio Kuntur',  // Texto del crédito (opcional)
       url: 'https://ejemplo.com/fotografo',  // URL hacia el creador de la imagen
     }
   },
