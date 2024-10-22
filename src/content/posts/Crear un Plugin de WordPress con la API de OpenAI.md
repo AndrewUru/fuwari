@@ -1,8 +1,8 @@
 ---
-title: Crear un Plugin de WordPress con la API de OpenAI
+title:  Creamos un Plugin de WordPress con la API de OpenAI
 published: 2024-10-22
 description: Aprende cómo crear un plugin para WordPress que integre la API de OpenAI, permitiendo generar contenido automático directamente desde el panel de administración de tu sitio.
-image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHdlYnxlbnwwfHx8fDE2ODIzNzU2MzY&ixlib=rb-1.2.1&q=80&w=1080' # Imagen de Unsplash para ilustrar el tutorial
+image: 'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' # Imagen de Unsplash para ilustrar el tutorial
 category: "Desarrollo Web"
 tags: ["WordPress", "Plugin", "OpenAI", "API", "PHP"]
 draft: false

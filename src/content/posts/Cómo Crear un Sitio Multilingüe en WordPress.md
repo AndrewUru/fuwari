@@ -2,7 +2,7 @@
 title: Cómo Crear un Sitio Multilingüe en WordPress
 published: 2024-10-22
 description: Aprende a configurar un sitio WordPress multilingüe utilizando plugins especializados para llegar a una audiencia internacional de forma eficiente y sencilla.
-image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHdlYnxlbnwwfHx8fDE2ODIzNzU2MzY&ixlib=rb-1.2.1&q=80&w=1080' # Imagen de Unsplash para ilustrar el tutorial
+image: 'https://images.unsplash.com/photo-1520333789090-1afc82db536a?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' # Imagen de Unsplash para ilustrar el tutorial
 tags: ["WordPress", "Multilingüe", "WPML", "Polylang", "Tutorial Avanzado"]
 category: "Desarrollo Web"
 draft: false

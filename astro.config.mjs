@@ -18,6 +18,8 @@ import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.
 import {parseDirectiveNode} from "./src/plugins/remark-directive-rehype.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs"
 import {remarkExcerpt} from "./src/plugins/remark-excerpt.js";
+import 'dotenv/config';
+
 
 const oklchToHex = (str) => {
   const DEFAULT_HUE = 250
