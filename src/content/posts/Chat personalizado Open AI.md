@@ -1,7 +1,7 @@
 ---
 title: Chat entrenado OpenAI
-published: 2024-10-20
-description: Aprende a crear tu propio Chat-Bot con OpenAI
+published: 2024-10-22
+description: Aprende a crear tu propio Chat-Bot con OpenAI.
 image: '' # Imagen local para ilustrar el tutorial
 tags: ["ChatBot", "OpenAI", "JavaScript", "Desarrollo Web"]
 category: "Inteligencia Artificial"
