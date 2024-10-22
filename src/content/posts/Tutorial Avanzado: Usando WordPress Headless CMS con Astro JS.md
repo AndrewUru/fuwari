@@ -2,7 +2,7 @@
 title: "Tutorial Avanzado: Usando WordPress Headless CMS con Astro JS"
 published: "2024-10-22"
 description: "Aprende a integrar WordPress como un Headless CMS con Astro JS para obtener un sitio web rápido y escalable, combinando la facilidad de gestión de contenido de WordPress con la modernidad de Astro."
-image: 'https://source.unsplash.com/featured/?web-development' # Reemplaza esta URL por la imagen correcta
+image: '' # Reemplaza esta URL por la imagen correcta
 tags: ["WordPress", "Astro JS", "Headless CMS", "Desarrollo Web", "Tutorial Avanzado"]
 category: "Desarrollo Web"
 draft: false
