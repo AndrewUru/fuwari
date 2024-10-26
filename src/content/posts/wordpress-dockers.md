@@ -1,5 +1,5 @@
 ---
-title: Levantar un Proyecto WordPress en segundos con Docker
+title: Desplegar un proyecto WordPress en segundos con Docker
 published: 2024-10-17
 description: Aprende a levantar un proyecto de WordPress de manera rápida y eficiente utilizando Docker para agilizar tu desarrollo.
 image: 'https://elsaltoweb.es/wp-content/uploads/2024/10/docker-y-wordpress.webp' # Reemplaza esta URL por la imagen correcta
