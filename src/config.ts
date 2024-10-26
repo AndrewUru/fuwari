@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
     credit: {
       enable: true,  // Activamos los créditos por si es necesario
       text: 'Studio Kuntur',  // Texto del crédito (opcional)
-      url: 'https://ejemplo.com/fotografo',  // URL hacia el creador de la imagen
+      url: 'https://www.instagram.com/studiokuntur/',  // URL hacia el creador de la imagen
     }
   },
   favicon: [
@@ -45,7 +45,7 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.About,
     {
       name: 'GitHub',
-      url: 'https://github.com/saicaca/fuwari',  // Asegúrate de revisar la URL del proyecto
+      url: 'https://github.com/AndrewUru/fuwari',  // Asegúrate de revisar la URL del proyecto
       external: true,  // Abre en una nueva pestaña
     },
   ],
