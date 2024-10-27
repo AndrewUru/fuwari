@@ -11,16 +11,15 @@ export type SiteConfig = {
     fixed: boolean
   }
   banner: {
-    enable: boolean
-    src: string
-    position?: 'top' | 'center' | 'bottom'
-    credit: {
-      enable: boolean
-      text: string
-      url?: string
-    }
-  }
-
+    enable: boolean;  // Asegúrate de que sea boolean
+    src: string;      // Ruta de la imagen del banner
+    position?: 'top' | 'center' | 'bottom';  // Opcional: posición de la imagen
+    credit?: {        // Información del crédito del banner
+      enable: boolean;
+      text: string;
+      url: string;
+    };
+  };
   favicon: Favicon[]
 }
 
