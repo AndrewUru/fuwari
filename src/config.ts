@@ -16,7 +16,7 @@ export const siteConfig: SiteConfig = {
   },
   banner: {
     enable: true,
-    src: 'assets/images/grafiti.jpeg',  // Asegúrate de tener la imagen correctamente en /src o /public
+    src: 'assets/images/grafiti.webp',  // Asegúrate de tener la imagen correctamente en /src o /public
     position: 'center',  // Posiciona la imagen en el centro
     credit: {
       enable: true,  // Activamos los créditos por si es necesario
