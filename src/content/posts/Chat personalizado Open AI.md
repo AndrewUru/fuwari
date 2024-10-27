@@ -39,7 +39,7 @@ Esta es una entrada donde puedes interactuar con un chatbot que responde a tus p
 
       // Llamar a la API de OpenAI
       try {
-        const response = await fetch('/api/chat', {
+        const response = await fetch('/api/chat.ts', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -81,6 +81,7 @@ Esta es una entrada donde puedes interactuar con un chatbot que responde a tus p
     border-radius: 10px;
   }
   #chat-history {
+    height:250px;
     max-height: 300px;
     overflow-y: auto;
     margin-bottom: 10px;
