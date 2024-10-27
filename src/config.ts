@@ -14,16 +14,29 @@ export const siteConfig: SiteConfig = {
     hue: 250,  // Ejemplo: cian, entre 0 a 360 (personaliza según colores)
     fixed: false,  // El visitante no podrá cambiar el color del tema
   },
-  banner: {
-    enable: true,
-    src: 'assets/images/grafiti.webp',  // Asegúrate de tener la imagen correctamente en /src o /public
-    position: 'center',  // Posiciona la imagen en el centro
-    credit: {
-      enable: true,  // Activamos los créditos por si es necesario
-      text: 'Studio Kuntur',  // Texto del crédito (opcional)
-      url: 'https://www.instagram.com/studiokuntur/',  // URL hacia el creador de la imagen
+banner: {
+  enable: true,
+  src: 'assets/images/grafiti.webp',
+  srcset: [
+    {
+      src: 'assets/images/grafiti-small.webp',
+      media: '(max-width: 600px)',
+      width: '600w'
+    },
+    {
+      src: 'assets/images/grafiti-large.webp',
+      media: '(min-width: 1200px)',
+      width: '1200w'
     }
-  },
+  ],
+  position: 'center',
+  credit: {
+    enable: true,
+    text: 'Studio Kuntur',
+    url: 'https://www.instagram.com/studiokuntur/',
+  }
+},
+
   favicon: [
     {
       src: '/favicon/icon.png',  // Ruta de tu favicon
